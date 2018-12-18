@@ -2,19 +2,30 @@
 dices = [0,0,0,0,0]
 scoreOne = 0
 scoreTwo = 0
+
+scoretwo = 0
+playerOne = ""
+playerTwo = ""
 turn = ""
+
 
 import random
 
 def main ():
-        input("Please enter your name: ")
-        lista = [0,1,2,3]
-       
-        dices = roll()
-        print(dices)
-        turn = "playerOneTurn"
-        
-        print(sumTot(dices))
+
+    a = True
+    while (a == True):
+        playerOne = input("Spelare 1: ")
+        playerTwo = input("Spelare 2: ")
+        if playerOne and playerTwo is "":
+            a=True
+        elif playerOne and playerTwo is not "":
+            a = False    
+            
+    dices = roll()
+    print(dices)
+    turn = "playerOneTurn"
+    print(sumTot(dices))
 
 def roll ():    
     
