@@ -8,7 +8,6 @@ playerOne = ""
 playerTwo = ""
 turn = ""
 
-
 import random
 
 def main ():
