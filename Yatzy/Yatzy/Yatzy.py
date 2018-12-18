@@ -4,18 +4,24 @@ dices = [0,0,0,0,0]
 scoreOne = 0
 scoretwo = 0
 
-def main ():
-   ## while (true):
-   #     input("please enter your name: ")
-   #     lista = [0,1,2,3]
-   #     for x in lista:
-   #         print (x)
-   #     lista = "hej"
-   #     print (lista)
-    print("Hejsan")
+import random
 
-def roll ():
-    print ("Not Defined")
+def main ():
+    while (True):
+        input("Please enter your name: ")
+        lista = [0,1,2,3]
+        #for x in lista:
+            #print (x)
+        lista = "Hej"
+        #print (lista)  
+
+        print(roll())
+
+
+def roll ():    
+    
+    dices=[random.randint(1, 6) for _ in range(6)]
+    return dices
 
 
 
@@ -36,6 +42,7 @@ def sum ():
             score += savedDice
 
     
+
 
 
 if __name__ == "__main__": main()
