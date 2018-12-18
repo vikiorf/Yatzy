@@ -1,2 +1,2 @@
 # Yatzy
-Du är hej
+Du är nej
