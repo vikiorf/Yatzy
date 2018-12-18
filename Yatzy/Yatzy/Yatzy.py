@@ -54,8 +54,6 @@ def sumTot ():
         scoreTwo = 0
         for x in dices:
             scoreTwo += x
-
-
     
 if __name__ == "__main__": main()
 
