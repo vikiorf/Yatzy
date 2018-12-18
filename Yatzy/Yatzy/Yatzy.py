@@ -17,6 +17,8 @@ def main ():
 def roll ():
     print ("Not Defined")
 
+
+
 def winner ():
     print ("Not Defined")
 
