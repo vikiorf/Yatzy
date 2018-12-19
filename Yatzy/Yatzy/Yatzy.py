@@ -5,18 +5,32 @@ import random
 
 def main ():
 
-    a = True
-    while (a == True):
-        playerOne = input("Spelare 1: ")
-        playerTwo = input("Spelare 2: ")
-        if playerOne and playerTwo is "":
-            a=True
-        elif playerOne and playerTwo is not "":
-            a = False    
-            
-    dices = roll()
-    print(dices)    
-    print(sumTot(dices))
+    turncount = 1
+    turn = 1
+    scoreOne = 0
+    scoreTwo = 0
+    playerOne = input("Spelare 1: ")
+    playerTwo = input("Spelare 2: ")
+
+    while (turncount <= 10):
+        if (turn == 1):
+            dices = roll()
+            print(dices)
+            turn += 1
+            turncount += 1
+
+            scoreOne += sumTot(dices)
+            print(playerOne + " poäng : " + str(scoreOne))
+
+        elif (turn == 2):
+            dices = roll()
+            print(dices)
+            turn -= 1
+            turncount += 1
+
+            scoreTwo += sumTot(dices)
+            print(playerTwo + " poäng : " + str(scoreTwo))
+
 
 def roll ():    
     
