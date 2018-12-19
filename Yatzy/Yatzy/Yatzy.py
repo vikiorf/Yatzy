@@ -1,31 +1,34 @@
 
 dices = [0,0,0,0,0]
-scoreOne = 0
-scoreTwo = 0
-
-scoretwo = 0
-playerOne = ""
-playerTwo = ""
-turn = ""
-
 
 import random
 
 def main ():
+    turncount = 1
+    turn = 1
+    scoreOne = 0
+    scoreTwo = 0
+    playerOne = input("Spelare 1: ")
+    playerTwo = input("Spelare 2: ")
 
-    a = True
-    while (a == True):
-        playerOne = input("Spelare 1: ")
-        playerTwo = input("Spelare 2: ")
-        if playerOne and playerTwo is "":
-            a=True
-        elif playerOne and playerTwo is not "":
-            a = False    
-            
-    dices = roll()
-    print(dices)
-    turn = "playerOneTurn"
-    print(sumTot(dices))
+   # while (turncount <= 10):
+        if (turn == 1):
+            dices = roll()
+            print(dices)
+            turn += 1
+            turncount += 1
+
+            scoreOne += sumTot(dices)
+            print(playerOne + " poäng : " + str(scoreOne))
+
+        elif (turn == 2):
+            dices = roll()
+            print(dices)
+            turn -= 1
+            turncount += 1
+
+            scoreTwo += sumTot(dices)
+            print(playerTwo + " poäng : " + str(scoreTwo))
 
 def roll ():    
     
