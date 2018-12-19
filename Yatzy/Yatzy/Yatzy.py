@@ -11,7 +11,7 @@ def main ():
     playerOne = input("Spelare 1: ")
     playerTwo = input("Spelare 2: ")
 
-   # while (turncount <= 10):
+    while (turncount <= 12):
         if (turn == 1):
             dices = roll()
             print(dices)
@@ -24,8 +24,8 @@ def main ():
         elif (turn == 2):
             dices = roll()
             print(dices)
+            turncount += 1            
             turn -= 1
-            turncount += 1
 
             scoreTwo += sumTot(dices)
             print(playerTwo + " poäng : " + str(scoreTwo))
@@ -37,17 +37,27 @@ def roll ():
 
 def winner ():
     if (scoreOne > scoreTwo):
-        print("Spelare 1 vann med : " + p1sum())
+        print("Spelare 1 vann med : " + scoreOne())
     if (scoreTwo > scoreOne):
-        print("Spelare 2 vann med : " + p2Sum()) 
+        print("Spelare 2 vann med : " + scoreTwo()) 
     else:
         print("Oavgjort")
 
 def sumTot (dices):
     sum = 0
-    for x in dices:
-        sum += x
-    return sum
+    turncount = 1
+    single = 1
+
+    if (turncount <= 12):
+        sum += SumOfSingle(dices, single)
     
+   # for x in dices:
+   #     sum += x
+    return sum
+    turncount += 1
+    
+def SumOfSingle(dices, single):
+    return sum([x for x in dices if x == single])
+
 if __name__ == "__main__": main()
 
