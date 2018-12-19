@@ -5,35 +5,40 @@ import random
 
 def main ():
     turncount = 1
-    turn = 1
+    t = 1
     scoreOne = 0
     scoreTwo = 0
     playerOne = input("Spelare 1: ")
     playerTwo = input("Spelare 2: ")
 
-    while (turncount <= 12):
-        if (turn == 1):
+    while (turncount <= 6):
+        if (t == 1):
             dices = roll()
-            print(dices)
-            turn += 1
-            turncount += 1
+            print(dices)            
 
             scoreOne += sumTot(dices)
             print(playerOne + " poäng : " + str(scoreOne))
 
-        elif (turn == 2):
+        elif (t == 2):
             dices = roll()
             print(dices)
             turncount += 1            
-            turn -= 1
 
             scoreTwo += sumTot(dices)
             print(playerTwo + " poäng : " + str(scoreTwo))
 
+        t = turn(t)
 def roll ():    
     
     dices=[random.randint(1, 6) for _ in range(6)]
     return dices
+
+def turn (t):
+    if (t == 2):
+        return  1
+        
+    elif (t == 1):
+        return 2        
 
 def winner ():
     if (scoreOne > scoreTwo):
@@ -43,16 +48,19 @@ def winner ():
     else:
         print("Oavgjort")
 
+def single ():
+    t = 1
+    single = 1
+    if turn(t) == 2:
+        single + 1
+    return single
+
 def sumTot (dices):
     sum = 0
     turncount = 1
-    single = 1
 
     if (turncount <= 12):
         sum += SumOfSingle(dices, single)
-    
-   # for x in dices:
-   #     sum += x
     return sum
     turncount += 1
     
