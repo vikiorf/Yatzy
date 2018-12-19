@@ -1,12 +1,5 @@
 
 dices = [0,0,0,0,0]
-scoreOne = 0
-scoreTwo = 0
-
-scoretwo = 0
-playerOne = ""
-playerTwo = ""
-turn = ""
 
 import random
 
@@ -21,13 +14,9 @@ def main ():
         elif playerOne and playerTwo is not "":
             a = False    
             
-    print(roll())
     dices = roll()
-    print(dices)
-    turn = "playerOneTurn"
-    sumTot()
-    print(scoreOne)
-
+    print(dices)    
+    print(sumTot(dices))
 
 def roll ():    
     
@@ -42,17 +31,11 @@ def winner ():
     else:
         print("Oavgjort")
 
-
-def sumTot ():
-    if (turn == "playerOneTurn"):
-       scoreOne = 0
-       for x in dices:
-            scoreOneTotal += x
-
-    if (turn == "playerTwo"):
-        scoreTwo = 0
-        for x in dices:
-            scoreTwo += x
+def sumTot (dices):
+    sum = 0
+    for x in dices:
+        sum += x
+    return sum
     
 if __name__ == "__main__": main()
 
